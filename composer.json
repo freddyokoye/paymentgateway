@@ -21,7 +21,7 @@
         "anandsiddharth/laravel-paytm-wallet": "^2.0.0",
         "razorpay/razorpay": "2.*",
         "mollie/laravel-mollie": "^2.0",
-        "unicodeveloper/laravel-paystack": "1.0.*",
+        "unicodeveloper/laravel-paystack": "1.2",
         "mercadopago/dx-php":"^2.4.4",
         "tzsk/payu": "^6.0.0",
         "square/square": "18.0.0.20220420",
