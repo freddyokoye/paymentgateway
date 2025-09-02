@@ -1,6 +1,6 @@
 {
     "name": "freddyokoye/paymentgateway",
-    "description": "a laravel package to manage multiple payment gateway",
+    "description": "a laravel package to manage multiple gateway",
     "keywords": [
         "Laravel",
         "vodia"
@@ -8,7 +8,7 @@
     "authors": [
         {
             "name": "Freddy Okoye",
-            "email": "vhodiamulta@gmail.com"
+            "email": "fredinadi@gmail.com"
         }
     ],
     "homepage": "https://github.com/freddyokoye/paymentgateway",
