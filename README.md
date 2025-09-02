@@ -1,7 +1,7 @@
 # paymentgateway
 
 > General information about this package.
-## Installation For laravel 8x
+## Installation For laravel 11x
 
 ##### Configure Your Composer.json file to install this package
 add below code to your ``composer.json`` file
@@ -21,7 +21,7 @@ composer require freddyokoye/paymentgateway
 ````
 
 if this payment package asked you for username and password here is it or generate your own token.
-```apacheconf
+```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
 
 ```
 
