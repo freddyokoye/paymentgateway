@@ -1,5 +1,6 @@
 
 {
+    "$schema": "https://getcomposer.org/schema.json",
     "name": "freddyokoye/paymentgateway",
     "description": "a laravel package to manage multiple payment gateway",
     "keywords": [
@@ -13,6 +14,7 @@
         }
     ],
     "homepage": "https://github.com/freddyokoye/paymentgateway",
+    "license": "MIT",
     "require": {
         "php": "^8.2",
         "laravel/framework": "^9.0|^10.0|^11.0|^12.0",
