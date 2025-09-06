@@ -1,8 +1,8 @@
 <?php
 
-namespace Vodia\Paymentgateway\Traits;
+namespace Freddyokoye\Paymentgateway\Traits;
 
-use Vodia\Paymentgateway\Base\Gateways\CashFreePay;
+use Freddyokoye\Paymentgateway\Base\Gateways\CashFreePay;
 
 trait CurrencySupport
 {
