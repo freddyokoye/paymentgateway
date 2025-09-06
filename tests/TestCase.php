@@ -1,6 +1,6 @@
 <?php
 
-namespace Vodia\Paymentgateway\Tests;
+namespace Freddyokoye\Paymentgateway\Tests;
 
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use Illuminate\Foundation\Application;
@@ -22,7 +22,7 @@ abstract class TestCase extends OrchestraTestCase
     protected function getPackageProviders($app)
     {
         return [
-            \Vodia\Paymentgateway\Providers\PaymentgatewayServiceProvider::class
+            \Freddyokoye\Paymentgateway\Providers\PaymentgatewayServiceProvider::class
         ];
     }
 }
