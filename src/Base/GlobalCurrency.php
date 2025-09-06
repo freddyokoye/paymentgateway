@@ -1,6 +1,6 @@
 <?php
 
-namespace  Vodia\Paymentgateway\Base;
+namespace  Freddyokoye\Paymentgateway\Base;
 
 /**
  *  List of available currency in this package
