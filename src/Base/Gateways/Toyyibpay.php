@@ -1,6 +1,6 @@
 <?php
 
-namespace Vodia\Paymentgateway\Base\Gateways;
+namespace Freddyokoye\Paymentgateway\Base\Gateways;
 
 use Billplz\Laravel\Billplz;
 use Carbon\Carbon;
@@ -8,11 +8,11 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
-use Vodia\Paymentgateway\Base\PaymentGatewayBase;
-use Vodia\Paymentgateway\Base\PaymentGatewayHelpers;
-use Vodia\Paymentgateway\Traits\CurrencySupport;
-use Vodia\Paymentgateway\Traits\MyanmarCurrencySupport;
-use Vodia\Paymentgateway\Traits\PaymentEnvironment;
+use Freddyokoye\Paymentgateway\Base\PaymentGatewayBase;
+use Freddyokoye\Paymentgateway\Base\PaymentGatewayHelpers;
+use Freddyokoye\Paymentgateway\Traits\CurrencySupport;
+use Freddyokoye\Paymentgateway\Traits\MyanmarCurrencySupport;
+use Freddyokoye\Paymentgateway\Traits\PaymentEnvironment;
 use Billplz\Signature;
 use Illuminate\Support\Str;
 
