@@ -1,11 +1,12 @@
 <?php
 
-namespace Vodia\Paymentgateway\Base\Gateways;
-use Vodia\Paymentgateway\Base\GlobalCurrency;
-use Vodia\Paymentgateway\Base\PaymentGatewayBase;
-use Vodia\Paymentgateway\Traits\CurrencySupport;
-use Vodia\Paymentgateway\Traits\IndianCurrencySupport;
-use Vodia\Paymentgateway\Traits\PaymentEnvironment;
+namespace Freddyokoye\Paymentgateway\Base\Gateways;
+
+use Freddyokoye\Paymentgateway\Base\GlobalCurrency;
+use Freddyokoye\Paymentgateway\Base\PaymentGatewayBase;
+use Freddyokoye\Paymentgateway\Traits\CurrencySupport;
+use Freddyokoye\Paymentgateway\Traits\IndianCurrencySupport;
+use Freddyokoye\Paymentgateway\Traits\PaymentEnvironment;
 
 
 class CashFreePay extends PaymentGatewayBase
