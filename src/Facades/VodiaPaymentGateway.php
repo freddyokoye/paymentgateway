@@ -1,11 +1,11 @@
 <?php
 
-namespace Vodia\Paymentgateway\Facades;
+namespace Freddyokoye\Paymentgateway\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use Vodia\Paymentgateway\Base\Gateways\InstamojoPay;
-use Vodia\Paymentgateway\Base\PaymentGatewayHelpers;
-use Vodia\Paymentgateway\Base\Gateways\SquarePay;
+use Freddyokoye\Paymentgateway\Base\Gateways\InstamojoPay;
+use Freddyokoye\Paymentgateway\Base\PaymentGatewayHelpers;
+use Freddyokoye\Paymentgateway\Base\Gateways\SquarePay;
 /**
  * @see GlobalCurrency
  * @method static script_currency_list()
