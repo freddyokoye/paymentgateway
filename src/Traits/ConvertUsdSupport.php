@@ -1,8 +1,8 @@
 <?php
 
-namespace Vodia\Paymentgateway\Traits;
+namespace Freddyokoye\Paymentgateway\Traits;
 
-use Vodia\Paymentgateway\Base\GlobalCurrency;
+use Freddyokoye\Paymentgateway\Base\GlobalCurrency;
 
 trait ConvertUsdSupport
 {
