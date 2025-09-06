@@ -1,6 +1,6 @@
 <?php
 
-namespace Vodia\Paymentgateway\Traits;
+namespace Freddyokoye\Paymentgateway\Traits;
 
 trait PaymentEnvironment
 {
