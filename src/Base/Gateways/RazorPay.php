@@ -1,13 +1,13 @@
 <?php
 
-namespace Vodia\Paymentgateway\Base\Gateways;
+namespace Freddyokoye\Paymentgateway\Base\Gateways;
 
 use Illuminate\Support\Facades\Http;
-use Vodia\Paymentgateway\Base\PaymentGatewayBase;
+use Freddyokoye\Paymentgateway\Base\PaymentGatewayBase;
 use Razorpay\Api\Api;
-use Vodia\Paymentgateway\Traits\CurrencySupport;
-use Vodia\Paymentgateway\Traits\IndianCurrencySupport;
-use Vodia\Paymentgateway\Traits\PaymentEnvironment;
+use Freddyokoye\Paymentgateway\Traits\CurrencySupport;
+use Freddyokoye\Paymentgateway\Traits\IndianCurrencySupport;
+use Freddyokoye\Paymentgateway\Traits\PaymentEnvironment;
 
 class RazorPay extends PaymentGatewayBase
 {
