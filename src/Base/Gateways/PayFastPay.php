@@ -1,11 +1,12 @@
 <?php
 
-namespace Vodia\Paymentgateway\Base\Gateways;
+namespace Freddyokoye\Paymentgateway\Base\Gateways;
+
 use Illuminate\Support\Facades\Config;
-use Vodia\Paymentgateway\Base\PaymentGatewayBase;
-use Vodia\Paymentgateway\Traits\CurrencySupport;
-use Vodia\Paymentgateway\Traits\PaymentEnvironment;
-use Vodia\Paymentgateway\Traits\ZarCurrencySupport;
+use Freddyokoye\Paymentgateway\Base\PaymentGatewayBase;
+use Freddyokoye\Paymentgateway\Traits\CurrencySupport;
+use Freddyokoye\Paymentgateway\Traits\PaymentEnvironment;
+use Freddyokoye\Paymentgateway\Traits\ZarCurrencySupport;
 
 
 class PayFastPay extends PaymentGatewayBase
