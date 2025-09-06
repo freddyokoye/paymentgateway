@@ -1,14 +1,14 @@
 <?php
 
-namespace Vodia\Paymentgateway\Base\Gateways;
+namespace Freddyokoye\Paymentgateway\Base\Gateways;
 
-use  Vodia\Paymentgateway\Base\PaymentGatewayBase;
+use  Freddyokoye\Paymentgateway\Base\PaymentGatewayBase;
 use Stripe\Charge;
 use Stripe\Stripe;
 use Stripe\StripeClient;
 use Stripe\Checkout\Session;
-use Vodia\Paymentgateway\Traits\CurrencySupport;
-use Vodia\Paymentgateway\Traits\PaymentEnvironment;
+use Freddyokoye\Paymentgateway\Traits\CurrencySupport;
+use Freddyokoye\Paymentgateway\Traits\PaymentEnvironment;
 
 class StripePay extends PaymentGatewayBase
 {
