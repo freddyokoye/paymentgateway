@@ -1,12 +1,12 @@
 <?php
 
-namespace Vodia\Paymentgateway\Base\Gateways;
+namespace Freddyokoye\Paymentgateway\Base\Gateways;
 
 use Tzsk\Payu\Concerns\Attributes;
 use Tzsk\Payu\Concerns\Customer;
 use Tzsk\Payu\Concerns\Transaction;
 use Tzsk\Payu\Facades\Payu;
-use Vodia\Paymentgateway\Base\PaymentGatewayBase;
+use Freddyokoye\Paymentgateway\Base\PaymentGatewayBase;
 
 class PayUmoneyPay extends PaymentGatewayBase
 {
