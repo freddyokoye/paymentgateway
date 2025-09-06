@@ -1,9 +1,9 @@
 <?php
 
-namespace Vodia\Paymentgateway\Tests\Features;
+namespace Freddyokoye\Paymentgateway\Tests\Features;
 
-use Vodia\Paymentgateway\Base\GlobalCurrency;
-use Vodia\Paymentgateway\Tests\TestCase;
+use Freddyokoye\Paymentgateway\Base\GlobalCurrency;
+use Freddyokoye\Paymentgateway\Tests\TestCase;
 
 class CurrencyListTest extends TestCase
 {
