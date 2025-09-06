@@ -1,13 +1,13 @@
 <?php
 
-namespace Vodia\Paymentgateway\Base\Gateways;
+namespace Freddyokoye\Paymentgateway\Base\Gateways;
 
 use Anand\LaravelPaytmWallet\Facades\PaytmWallet;
 use Illuminate\Support\Str;
-use Vodia\Paymentgateway\Base\PaymentGatewayBase;
-use Vodia\Paymentgateway\Traits\CurrencySupport;
-use Vodia\Paymentgateway\Traits\IndianCurrencySupport;
-use Vodia\Paymentgateway\Traits\PaymentEnvironment;
+use Freddyokoye\Paymentgateway\Base\PaymentGatewayBase;
+use Freddyokoye\Paymentgateway\Traits\CurrencySupport;
+use Freddyokoye\Paymentgateway\Traits\IndianCurrencySupport;
+use Freddyokoye\Paymentgateway\Traits\PaymentEnvironment;
 
 class PaytmPay extends PaymentGatewayBase
 {
