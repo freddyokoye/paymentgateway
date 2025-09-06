@@ -1,6 +1,6 @@
 <?php
 
-namespace Vodia\Paymentgateway\Console\Commands;
+namespace Freddyokoye\Paymentgateway\Console\Commands;
 
 use Illuminate\Console\Command;
 
