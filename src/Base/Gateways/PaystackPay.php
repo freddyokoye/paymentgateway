@@ -1,12 +1,12 @@
 <?php
 
-namespace Vodia\Paymentgateway\Base\Gateways;
+namespace Freddyokoye\Paymentgateway\Base\Gateways;
 
-use Vodia\Paymentgateway\Base\GlobalCurrency;
-use Vodia\Paymentgateway\Base\PaymentGatewayBase;
+use Freddyokoye\Paymentgateway\Base\GlobalCurrency;
+use Freddyokoye\Paymentgateway\Base\PaymentGatewayBase;
 use Unicodeveloper\Paystack\Facades\Paystack;
-use Vodia\Paymentgateway\Traits\CurrencySupport;
-use Vodia\Paymentgateway\Traits\PaymentEnvironment;
+use Freddyokoye\Paymentgateway\Traits\CurrencySupport;
+use Freddyokoye\Paymentgateway\Traits\PaymentEnvironment;
 
 
 class PaystackPay extends PaymentGatewayBase
