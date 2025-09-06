@@ -1,9 +1,9 @@
 <?php
 
-namespace Vodia\Paymentgateway\Tests\Features;
+namespace Freddyokoye\Paymentgateway\Tests\Features;
 
-use Vodia\Paymentgateway\Facades\VodiaPaymentGateway;
-use Vodia\Paymentgateway\Tests\TestCase;
+use Freddyokoye\Paymentgateway\Facades\VodiaPaymentGateway;
+use Freddyokoye\Paymentgateway\Tests\TestCase;
 
 class PaymentGatewayHelperTest extends TestCase
 {
