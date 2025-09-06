@@ -1,10 +1,10 @@
 <?php
 
-namespace Vodia\Paymentgateway\Http\Controllers;
+namespace Freddyokoye\Paymentgateway\Http\Controllers;
 
 
 use Illuminate\Http\Request;
-use Vodia\Paymentgateway\Facades\VodiaPaymentGateway;
+use Freddyokoye\Paymentgateway\Facades\VodiaPaymentGateway;
 
 class StripePaymentController extends Controller
 {
