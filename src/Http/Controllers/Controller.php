@@ -1,6 +1,6 @@
 <?php
 
-namespace Vodia\Paymentgateway\Http\Controllers;
+namespace Freddyokoye\Paymentgateway\Http\Controllers;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
