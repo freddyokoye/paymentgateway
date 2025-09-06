@@ -5,7 +5,7 @@ namespace Freddyokoye\Paymentgateway\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Unicodeveloper\Paystack\Facades\Paystack;
-use Freddyokoye\Paymentgateway\Facades\XgPaymentGateway;
+use Freddyokoye\Paymentgateway\Facades\VodiaPaymentGateway;
 
 class PaystackPaymentController extends Controller
 {
