@@ -2,127 +2,167 @@
 
 namespace Fredokoye\Paymentgateway\Base\Gateways;
 
-use Billplz\Laravel\Billplz;
-use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Session;
+use Fredokoye\Paymentgateway\Base\GlobalCurrency;
 use Fredokoye\Paymentgateway\Base\PaymentGatewayBase;
-use Fredokoye\Paymentgateway\Base\PaymentGatewayHelpers;
 use Fredokoye\Paymentgateway\Traits\CurrencySupport;
-use Fredokoye\Paymentgateway\Traits\MyanmarCurrencySupport;
+use Fredokoye\Paymentgateway\Traits\IndianCurrencySupport;
 use Fredokoye\Paymentgateway\Traits\PaymentEnvironment;
-use Billplz\Signature;
-use Illuminate\Support\Str;
 
-class BillPlzPay extends PaymentGatewayBase
+
+class CashFreePay extends PaymentGatewayBase
 {
-    use CurrencySupport,MyanmarCurrencySupport,PaymentEnvironment;
-    public $key;
-    public $version;
-    public $x_signature;
-    public $collection_name;
+    use IndianCurrencySupport,CurrencySupport,PaymentEnvironment;
 
+    protected $app_id;
+    protected $secret_key;
 
-    public function getCollectionName(){
-        return $this->collection_name;
-    }
-    public function setCollectionName($collection_name){
-        $this->collection_name = $collection_name;
-        return $this;
-    }
-
-    public function getKey(){
-        return $this->key;
-    }
-    public function setKey($key){
-        $this->key = $key;
-        return $this;
-    }
-
-    public function getVersion(){
-        return $this->version;
-    }
-    public function setVersion($version){
-        $this->version = $version;
-        return $this;
-    }
-
-    public function getXsignature(){
-        return $this->x_signature;
-    }
-    public function setXsignature($x_signature){
-        $this->x_signature = $x_signature;
-        return $this;
-    }
-
+    /**
+     * @inheritDoc
+     */
     public function charge_amount($amount)
     {
         if (in_array($this->getCurrency(), $this->supported_currency_list())){
-            return $amount * 100;
+            return $amount;
         }
-        return $this->get_amount_in_myr($amount);
+        return $this->get_amount_in_inr($amount);
     }
 
+
+
+    /**
+     * @inheritDoc
+     */
     public function ipn_response(array $args = [])
     {
-        $signature = new Signature($this->getXsignature(), Signature::WEBHOOK_PARAMETERS);
-        $x_signature = $signature->create(request()->all());
+        $config_data = $this->setConfig();
+        $secretKey = $config_data['secret_key'];
+        $orderId = request()->get('orderId');
+        $orderAmount = request()->get('orderAmount');
+        $referenceId = request()->get('referenceId');
+        $txStatus = request()->get('txStatus');
+        $paymentMode = request()->get('paymentMode');
+        $txMsg = request()->get('txMsg');
+        $txTime = request()->get('txTime');
+        $signature = request()->get('signature');
 
-        $oder_id = Str::after(request()->get('name'),'ID#');
-        if (hash_equals($x_signature,request()->get('x_signature')) && request()->get('paid') === 'true'){
+        $data = $orderId . $orderAmount . $referenceId . $txStatus . $paymentMode . $txMsg . $txTime;
+        $hash_hmac = hash_hmac('sha256', $data, $secretKey, true);
+        $computedSignature = base64_encode($hash_hmac);
+
+        if ($computedSignature === $signature && request()->txStatus === 'SUCCESS'){
             return $this->verified_data([
                 'status' => 'complete',
-                'transaction_id' => request()->id,
-                'order_id' => substr( $oder_id,5,-5) ,
+                'transaction_id' => request()->referenceId,
+                'order_id' => substr( request()->get('orderId'),5,-5) ,
             ]);
         }
-        return  ['status' => 'failed','order_id' => substr( $oder_id,5,-5) ];
+        return  ['status' => 'failed'];
     }
+
+    /**
+     * @inheritDoc
+     */
     public function charge_customer(array $args)
     {
-        $this->setConfigration();
-        try {
-            $bill = Billplz::bill()->create(
-                $this->getCollectionName(),
-                $args['email'],
-                $args['phone'] ?? '',
-                $args['name'].' id#'.PaymentGatewayHelpers::wrapped_id($args['order_id']),
-                $this->charge_amount($args['amount']),
-                $args['ipn_url'],
-                $args['description'],
-                [
-                    'redirect_url' =>  $args['success_url'],
-                ]
-            );
-            $arry = $bill->toArray();
-            Session::put('billplz_order_id',PaymentGatewayHelpers::wrapped_id($args['order_id']));
-            return redirect()->to($arry['url']);
-        }catch (\Exception $e){
-            abort(501,$e->getMessage());
+        $config_data = $this->setConfig();
+        $order_id =  random_int(12345,99999).$args['order_id'].random_int(12345,99999);
+        $postData = array(
+            "appId" => $config_data['app_id'],
+            "orderId" => $order_id,
+            "orderAmount" => round($this->charge_amount($args['amount']),2),
+            "orderCurrency" => "INR",
+            "orderNote" => $order_id,
+            "customerName" => $args['name'],
+            "customerPhone" => random_int(9999999999999,9999999999999),
+            "customerEmail" => $args['email'],
+            "returnUrl" => $args['ipn_url'],
+            "notifyUrl" => null,
+        );
+
+        ksort($postData);
+
+        $signatureData = "";
+        foreach ( $postData  as $key => $value) {
+            $signatureData .= $key . $value;
         }
+        $signature = hash_hmac('sha256', $signatureData, $config_data['secret_key'], true);
+        $signature = base64_encode($signature);
+        $data = [
+            'action' => $config_data['action'],
+            'app_id' => $config_data['app_id'],
+            'order_id' => $order_id,
+            'amount' => round($this->charge_amount($args['amount']),2),
+            'currency' => "INR",
+            'name' => $args['name'],
+            'email' => $args['email'],
+            'phone' => random_int(9999999999999,9999999999999),
+            'signature' => $signature,
+            "return_url" => $args['ipn_url'],
+            "notify_url" => null,
+        ];
+        return view('paymentgateway::cashfree',['payment_data' => $data]);
     }
 
+    /**
+     * @inheritDoc
+     */
     public function supported_currency_list()
     {
-        return  ['MYR'];
+        return ['INR'];
     }
 
+    /**
+     * @inheritDoc
+     */
     public function charge_currency()
     {
-        return 'MYR';
+        if (in_array($this->getCurrency(), $this->supported_currency_list())){
+            return $this->getCurrency();
+        }
+        return  "INR";
     }
 
+    /**
+     * @inheritDoc
+     */
     public function gateway_name()
     {
-        return 'billplz';
+        return 'cashfree';
     }
 
-    protected function setConfigration() : void
-    {
-       Config::set([
-           'services.billplz.key' => $this->getKey(),
-           'services.billplz.version' => $this->getVersion(),
-           'services.billplz.x-signature' => $this->getXsignature(),
-           'services.billplz.sandbox' => $this->getEnv(),
-       ]);
+    /* set app id */
+    public function setAppId($app_id){
+         $this->app_id = $app_id;
+         return $this;
     }
+    /* set app secret */
+    public function setSecretKey($secret_key){
+        $this->secret_key = $secret_key;
+        return $this;
+    }
+    /* get app id */
+    private function getAppId(){
+        return  $this->app_id;
+    }
+    /* get secret key */
+    private function getSecretKey(){
+        return $this->secret_key;
+    }
+
+    protected function setConfig() : array
+    {
+        return [
+          'app_id' => $this->getAppId(),
+          'secret_key' => $this->getSecretKey(),
+          'order_currency' => 'INR',
+          'action' => $this->get_api_url()
+        ];
+    }
+
+    public function get_api_url(){
+        return $this->getEnv() ?
+            'https://test.cashfree.com/billpay/checkout/post/submit' :
+            'https://www.cashfree.com/checkout/post/submit';
+    }
+
 }
