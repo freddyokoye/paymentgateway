@@ -1,11 +1,11 @@
 <?php
 
-namespace Vodia\Paymentgateway\Http\Controllers;
+namespace Freddyokoye\Paymentgateway\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Unicodeveloper\Paystack\Facades\Paystack;
-use Vodia\Paymentgateway\Facades\XgPaymentGateway;
+use Freddyokoye\Paymentgateway\Facades\XgPaymentGateway;
 
 class PaystackPaymentController extends Controller
 {
