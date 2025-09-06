@@ -1,15 +1,15 @@
 <?php
 
-namespace Xgenious\Paymentgateway\Base\Gateways;
+namespace Fredokoye\Paymentgateway\Base\Gateways;
 
 use Billplz\Laravel\Billplz;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Session;
-use Vodia\Paymentgateway\Base\PaymentGatewayBase;
-use Vodia\Paymentgateway\Base\PaymentGatewayHelpers;
-use Vodia\Paymentgateway\Traits\CurrencySupport;
-use Vodia\Paymentgateway\Traits\MyanmarCurrencySupport;
-use Vodia\Paymentgateway\Traits\PaymentEnvironment;
+use Fredokoye\Paymentgateway\Base\PaymentGatewayBase;
+use Fredokoye\Paymentgateway\Base\PaymentGatewayHelpers;
+use Fredokoye\Paymentgateway\Traits\CurrencySupport;
+use Fredokoye\Paymentgateway\Traits\MyanmarCurrencySupport;
+use Fredokoye\Paymentgateway\Traits\PaymentEnvironment;
 use Billplz\Signature;
 use Illuminate\Support\Str;
 
