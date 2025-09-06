@@ -37,18 +37,18 @@
     },
     "autoload": {
         "psr-4": {
-            "Vodia\\Paymentgateway\\": "src/"
+            "Freddyokoye\\Paymentgateway\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Vodia\\Paymentgateway\\Tests\\": "tests/"
+            "Freddyokoye\\Paymentgateway\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Vodia\\Paymentgateway\\Providers\\PaymentgatewayServiceProvider"
+                "Freddyokoye\\Paymentgateway\\Providers\\PaymentgatewayServiceProvider"
             ]
         }
     },
