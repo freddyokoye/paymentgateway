@@ -1,6 +1,6 @@
 <?php
-namespace Vodia\Paymentgateway\Traits;
-use Vodia\Paymentgateway\Base\GlobalCurrency;
+namespace Freddyokoye\Paymentgateway\Traits;
+use Freddyokoye\Paymentgateway\Base\GlobalCurrency;
 
 trait MalaysiaCurrencySupport
 {
