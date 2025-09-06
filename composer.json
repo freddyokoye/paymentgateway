@@ -28,7 +28,11 @@
         "square/square": "43.0.2.20250820",
         "cinetpay/cinetpay-php": "^1.9.2",
         "sharifur/payfast" : "^v3.0.0",
-        "authorizenet/authorizenet": "^2.0.4"
+        "authorizenet/authorizenet": "^2.0.4",
+        "php-http/message": "^1.16.2",
+        "php-http/message-factory": "^1.1.0",
+        "iyzico/iyzipay-php": "^2.0.59",
+        "stevebauman/location": "^7.6.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.0",
