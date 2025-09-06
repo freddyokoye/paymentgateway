@@ -1,28 +1,28 @@
 <?php
 
-namespace Vodia\Paymentgateway\Base;
+namespace Freddyokoye\Paymentgateway\Base;
 
-use Vodia\Paymentgateway\Base\Gateways\AuthorizeDotNetPay;
-use Vodia\Paymentgateway\Base\Gateways\BillPlzPay;
-use Vodia\Paymentgateway\Base\Gateways\CashFreePay;
-use Vodia\Paymentgateway\Base\Gateways\CinetPay;
-use Vodia\Paymentgateway\Base\Gateways\FlutterwavePay;
-use Vodia\Paymentgateway\Base\Gateways\InstamojoPay;
-use Vodia\Paymentgateway\Base\Gateways\MidtransPay;
-use Vodia\Paymentgateway\Base\Gateways\MolliePay;
-use Vodia\Paymentgateway\Base\Gateways\PagaliPay;
-use Vodia\Paymentgateway\Base\Gateways\PayFastPay;
-use Vodia\Paymentgateway\Base\Gateways\PaypalPay;
-use Vodia\Paymentgateway\Base\Gateways\PaystackPay;
-use Vodia\Paymentgateway\Base\Gateways\PayTabsPay;
-use Vodia\Paymentgateway\Base\Gateways\PaytmPay;
-use Vodia\Paymentgateway\Base\Gateways\PayUmoneyPay;
-use Vodia\Paymentgateway\Base\Gateways\RazorPay;
-use Vodia\Paymentgateway\Base\Gateways\SquarePay;
-use Vodia\Paymentgateway\Base\Gateways\StripePay;
-use Vodia\Paymentgateway\Base\Gateways\MarcadoPagoPay;
-use Vodia\Paymentgateway\Base\Gateways\Toyyibpay;
-use Vodia\Paymentgateway\Base\Gateways\ZitoPay;
+use Freddyokoye\Paymentgateway\Base\Gateways\AuthorizeDotNetPay;
+use Freddyokoye\Paymentgateway\Base\Gateways\BillPlzPay;
+use Freddyokoye\Paymentgateway\Base\Gateways\CashFreePay;
+use Freddyokoye\Paymentgateway\Base\Gateways\CinetPay;
+use Freddyokoye\Paymentgateway\Base\Gateways\FlutterwavePay;
+use Freddyokoye\Paymentgateway\Base\Gateways\InstamojoPay;
+use Freddyokoye\Paymentgateway\Base\Gateways\MidtransPay;
+use Freddyokoye\Paymentgateway\Base\Gateways\MolliePay;
+use Freddyokoye\Paymentgateway\Base\Gateways\PagaliPay;
+use Freddyokoye\Paymentgateway\Base\Gateways\PayFastPay;
+use Freddyokoye\Paymentgateway\Base\Gateways\PaypalPay;
+use Freddyokoye\Paymentgateway\Base\Gateways\PaystackPay;
+use Freddyokoye\Paymentgateway\Base\Gateways\PayTabsPay;
+use Freddyokoye\Paymentgateway\Base\Gateways\PaytmPay;
+use Freddyokoye\Paymentgateway\Base\Gateways\PayUmoneyPay;
+use Freddyokoye\Paymentgateway\Base\Gateways\RazorPay;
+use Freddyokoye\Paymentgateway\Base\Gateways\SquarePay;
+use Freddyokoye\Paymentgateway\Base\Gateways\StripePay;
+use Freddyokoye\Paymentgateway\Base\Gateways\MarcadoPagoPay;
+use Freddyokoye\Paymentgateway\Base\Gateways\Toyyibpay;
+use Freddyokoye\Paymentgateway\Base\Gateways\ZitoPay;
 
 /**
  * @see SquarePay
