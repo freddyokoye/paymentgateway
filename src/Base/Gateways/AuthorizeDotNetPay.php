@@ -1,17 +1,17 @@
 <?php
 
-namespace Vodia\Paymentgateway\Base\Gateways;
+namespace Fredokoye\Paymentgateway\Base\Gateways;
 
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Session;
-use Vodia\Paymentgateway\Base\GlobalCurrency;
-use Vodia\Paymentgateway\Base\PaymentGatewayBase;
+use Fredokoye\Paymentgateway\Base\GlobalCurrency;
+use Fredokoye\Paymentgateway\Base\PaymentGatewayBase;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
-use Vodia\Paymentgateway\Base\PaymentGatewayHelpers;
-use Vodia\Paymentgateway\Traits\ConvertUsdSupport;
-use Vodia\Paymentgateway\Traits\CurrencySupport;
-use Vodia\Paymentgateway\Traits\PaymentEnvironment;
+use Fredokoye\Paymentgateway\Base\PaymentGatewayHelpers;
+use Fredokoye\Paymentgateway\Traits\ConvertUsdSupport;
+use Fredokoye\Paymentgateway\Traits\CurrencySupport;
+use Fredokoye\Paymentgateway\Traits\PaymentEnvironment;
 use net\authorize\api\contract\v1 as AnetAPI;
 use net\authorize\api\controller as AnetController;
 
