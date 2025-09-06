@@ -1,12 +1,12 @@
 <?php
 
-namespace Fredokoye\Paymentgateway\Base\Gateways;
+namespace Freddyokoye\Paymentgateway\Base\Gateways;
 
-use Fredokoye\Paymentgateway\Base\GlobalCurrency;
-use Fredokoye\Paymentgateway\Base\PaymentGatewayBase;
-use Fredokoye\Paymentgateway\Traits\CurrencySupport;
-use Fredokoye\Paymentgateway\Traits\IndianCurrencySupport;
-use Fredokoye\Paymentgateway\Traits\PaymentEnvironment;
+use Freddyokoye\Paymentgateway\Base\GlobalCurrency;
+use Freddyokoye\Paymentgateway\Base\PaymentGatewayBase;
+use Freddyokoye\Paymentgateway\Traits\CurrencySupport;
+use Freddyokoye\Paymentgateway\Traits\IndianCurrencySupport;
+use Freddyokoye\Paymentgateway\Traits\PaymentEnvironment;
 
 
 class CashFreePay extends PaymentGatewayBase
