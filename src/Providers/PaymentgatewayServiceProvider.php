@@ -1,9 +1,9 @@
 <?php
 
-namespace Vodia\Paymentgateway\Providers;
+namespace Freddyokoye\Paymentgateway\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Vodia\Paymentgateway\Base\PaymentGatewayHelpers;
+use Freddyokoye\Paymentgateway\Base\PaymentGatewayHelpers;
 
 class PaymentgatewayServiceProvider extends ServiceProvider
 {
@@ -64,7 +64,7 @@ class PaymentgatewayServiceProvider extends ServiceProvider
          */
         // if ($this->app->runningInConsole()) {
         //     $this->commands([
-        //         \Vodia\Paymentgateway\Console\Commands\PaymentgatewayCommand::class,
+        //         \Freddyokoye\Paymentgateway\Console\Commands\PaymentgatewayCommand::class,
         //     ]);
         // }
 
