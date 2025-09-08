@@ -29,7 +29,6 @@
         "cinetpay/cinetpay-php": "^1.9.2",
         "sharifur/payfast" : "^v3.0.0",
         "authorizenet/authorizenet": "^2.0.4",
-        "guzzlehttp/guzzle": "^7.10.0",
         "iyzico/iyzipay-php": "^2.0.59",
         "stevebauman/location": "^7.6.0"
     },
